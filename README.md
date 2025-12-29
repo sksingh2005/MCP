@@ -6,15 +6,15 @@ A production-ready banking server built with **FastMCP** (Model Context Protocol
 
 | Feature | Description |
 |---------|-------------|
-| 🔐 **API Key Authentication** | Secure endpoints with `X-API-Key` header |
-| 🔄 **Idempotency Support** | Prevent duplicate transactions with `Idempotency-Key` |
-| 📡 **WebSocket Updates** | Real-time transaction notifications |
-| 📊 **CSV Export** | Stream transaction history as CSV |
-| 📚 **OpenAPI Docs** | Auto-generated Swagger UI at `/docs` |
-| 🐳 **Docker Ready** | One-command containerized deployment |
-| 🤖 **MCP Integration** | LLM-compatible tools for AI assistants |
+| **API Key Authentication** | Secure endpoints with `X-API-Key` header |
+|  **Idempotency Support** | Prevent duplicate transactions with `Idempotency-Key` |
+|  **WebSocket Updates** | Real-time transaction notifications |
+|  **CSV Export** | Stream transaction history as CSV |
+|  **OpenAPI Docs** | Auto-generated Swagger UI at `/docs` |
+|  **Docker Ready** | One-command containerized deployment |
+|  **MCP Integration** | LLM-compatible tools for AI assistants |
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -161,7 +161,7 @@ ws.onopen = () => {
 {"type": "pong"}
 ```
 
-## 🤖 MCP Tools
+##  MCP Tools
 
 For LLM integration, the following MCP tools are available:
 
@@ -183,7 +183,7 @@ fastmcp run server.py:mcp --transport http --port 8000
 fastmcp dev server.py:mcp
 ```
 
-## 🐳 Docker Deployment
+##  Docker Deployment
 
 ### Build and Run
 
@@ -223,7 +223,7 @@ mcp/
 └── bank.db                # SQLite database (created at runtime)
 ```
 
-## 🔄 Idempotency
+## Idempotency
 
 The `deposit` and `withdraw` endpoints support idempotency to prevent duplicate transactions:
 
@@ -239,18 +239,3 @@ curl -X POST ... -H "Idempotency-Key: txn-abc-123" -d '{"amount": 100}'
 curl -X POST ... -H "Idempotency-Key: txn-abc-123" -d '{"amount": 100}'
 # Response includes: "idempotent_replay": true
 ```
-
-## 🛡️ Security Features
-
-- **API Key Authentication**: All sensitive endpoints protected
-- **Non-root Docker User**: Container runs as unprivileged user
-- **Input Validation**: Pydantic models validate all inputs
-- **SQL Injection Prevention**: Parameterized queries throughout
-
-## 📝 License
-
-MIT License - Feel free to use and modify for your projects.
-
----
-
-Built with ❤️ using [FastMCP](https://gofastmcp.com)
