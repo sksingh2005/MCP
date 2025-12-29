@@ -1,2 +1,4 @@
 fastmcp>=2.0.0
 uvicorn[standard]
+fastapi
+starlette
